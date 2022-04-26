@@ -2,6 +2,10 @@ from django.db import models
 
 
 class Brand(models.Model):
+    class Meta:
+        verbose_name = "Бренд"
+        verbose_name_plural = "Бренды"
+
     title = models.CharField(verbose_name="Название", max_length=20)
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(verbose_name='Картинка', null=True, blank=True)
@@ -11,6 +15,10 @@ class Brand(models.Model):
 
 
 class Type(models.Model):
+    class Meta:
+        verbose_name = "Тип"
+        verbose_name_plural = "Типы"
+
     title = models.CharField(verbose_name="Название", max_length=50)
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(verbose_name='Картинка', null=True, blank=True)
@@ -20,10 +28,18 @@ class Type(models.Model):
 
 
 class Photo(models.Model):
+    class Meta:
+        verbose_name = "Фотография"
+        verbose_name_plural = "Фотографии"
+
     image = models.ImageField(verbose_name='Картинка', null=True, blank=True)
 
 
 class Bike(models.Model):
+    class Meta:
+        verbose_name = "Велосипед"
+        verbose_name_plural = "Велосипеды"
+
     SIZE_CHOICES = (
         ('6-9', '6-9'),
         ('9-13', '9-13'),
